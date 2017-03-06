@@ -3,6 +3,7 @@ import java.util.Collections;
 import java.util.List;
 
 import relevenotes.model.entities.Stagiaire;
+import relevenotes.model.entities.comparators.MoyenneComparator;
 import relevenotes.model.exceptions.CalculMoyenneImpossibleException;
 
 public class Lanceur {
@@ -17,11 +18,11 @@ public class Lanceur {
 		Stagiaire s2 = new Stagiaire();
 		s2.setIdentite("fifi");
 		s2.ajouterNote(5);
-		s2.ajouterNote(5);
+		s2.ajouterNote(6);
 		
 		Stagiaire s3 = new Stagiaire();
 		s3.setIdentite("loulou");
-		s3.ajouterNote(10);
+		s3.ajouterNote(00);
 		s3.ajouterNote(10);
 		
 		List<Stagiaire> classe = new ArrayList<>();
@@ -34,6 +35,15 @@ public class Lanceur {
 		for (Stagiaire stagiaire : classe) {
 			System.out.println(stagiaire);
 		}
+		
+		
+		
+		Collections.sort(classe, new MoyenneComparator());
+		
+		for (Stagiaire stagiaire : classe) {
+			System.out.println(stagiaire);
+		}
+		
 		
 		
 		
