@@ -1,6 +1,5 @@
 package relevenotes.model.facade;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -11,7 +10,7 @@ import relevenotes.model.entities.comparators.MoyenneComparator;
 
 public class FacadeMetierImpl implements FacadeMetier {
 
-	private Dao persistanceStagiaires;
+	private Dao<Stagiaire, String> persistanceStagiaires;
 
 	/*
 	 * (non-Javadoc)
@@ -33,7 +32,7 @@ public class FacadeMetierImpl implements FacadeMetier {
 	 */
 	@Override
 	public void ajouterNote(double d, Stagiaire s) {
-
+		s.ajouterNote(d);
 	}
 
 	/*
@@ -67,9 +66,9 @@ public class FacadeMetierImpl implements FacadeMetier {
 	 */
 	@Override
 	public List<Stagiaire> listerStagiairesOrdreDeMerite() {
-		Collections.sort(persistanceStagiaires.readAll(), new MoyenneComparator());
-
-		return null;
+		List<Stagiaire> l = persistanceStagiaires.readAll();
+		Collections.sort(l, new MoyenneComparator());
+		return l;
 	}
 
 }

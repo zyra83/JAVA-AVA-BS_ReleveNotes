@@ -1,17 +1,20 @@
-package relevenote;
+package relevenotes;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import relevenotes.model.entities.Stagiaire;
-import relevenotes.model.entities.comparators.MoyenneComparator;
-import relevenotes.model.exceptions.CalculMoyenneImpossibleException;
+import relevenotes.model.contracts.FacadeMetier;
+import relevenotes.model.facade.FacadeFactory;
+import relevenotes.presenter.PresenterPrincipal;
+import relevenotes.view.Ihm;
+import relevenotes.view.VueFactory;
 
 public class Lanceur {
 
 	public static void main(String[] args) {
-
+		
+		FacadeMetier fm = FacadeFactory.fabriquerFacadeMetier();
+		Ihm ihm = VueFactory.fabriquerVueConsole();
+		PresenterPrincipal prez = new PresenterPrincipal(fm, ihm);
+		prez.executer();
+		/*
 		Stagiaire s1 = new Stagiaire();
 		s1.setIdentite("riri");
 		s1.ajouterNote(3);
@@ -49,6 +52,7 @@ public class Lanceur {
 		} catch (CalculMoyenneImpossibleException e) {
 			System.out.println(e.getMessage());
 		}
+		*/
 
 	}
 }

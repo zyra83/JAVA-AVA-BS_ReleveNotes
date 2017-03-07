@@ -1,7 +1,7 @@
-package relevenote.presenter;
+package relevenotes.presenter;
 
-import relevenote.view.Ihm;
 import relevenotes.model.contracts.FacadeMetier;
+import relevenotes.view.Ihm;
 
 public class PresenterPrincipal {
 
@@ -14,6 +14,6 @@ public class PresenterPrincipal {
 	}
 	
 	public void executer(){
-		
+		laVue.afficherMenu();
 	}
 }

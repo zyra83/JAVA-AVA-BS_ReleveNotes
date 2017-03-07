@@ -1,4 +1,4 @@
-package relevenote.tests;
+package relevenotes.tests;
 
 import org.junit.Test;
 

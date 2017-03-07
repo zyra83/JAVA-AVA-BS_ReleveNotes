@@ -8,7 +8,7 @@ import relevenotes.model.entities.Stagiaire;
 
 public class DaoStagiairesMemoire implements Dao<Stagiaire, String> {
 
-	private List<Stagiaire> setStagiaire = new ArrayList<Stagiaire>();
+	private List<Stagiaire> setStagiaire = new ArrayList<>();
 
 	public DaoStagiairesMemoire() {
 		// TODO Auto-generated constructor stub

@@ -2,4 +2,4 @@
  * @author VOTRE_NOM
  *
  */
-package relevenote.view;
+package relevenotes.view;

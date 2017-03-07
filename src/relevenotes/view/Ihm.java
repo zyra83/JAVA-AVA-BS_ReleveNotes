@@ -1,4 +1,4 @@
-package relevenote.view;
+package relevenotes.view;
 
 import java.util.Collection;
 

@@ -1,4 +1,4 @@
-package relevenote.view;
+package relevenotes.view;
 
 import java.util.Collection;
 
@@ -15,7 +15,7 @@ public class MenuPrincipalConsole implements Ihm {
 	 */
 	@Override
 	public void afficherMenu() {
-
+		System.out.println("MenuPrincipalConsole.afficherMenu()");
 	}
 
 	/* (non-Javadoc)
@@ -23,7 +23,7 @@ public class MenuPrincipalConsole implements Ihm {
 	 */
 	@Override
 	public void afficher(String s) {
-
+		System.out.println("MenuPrincipalConsole.afficher() : " + s);
 	}
 
 	/* (non-Javadoc)
@@ -31,6 +31,7 @@ public class MenuPrincipalConsole implements Ihm {
 	 */
 	@Override
 	public int saisir(int n, int s) {
+		System.out.println("MenuPrincipalConsole.saisir()");
 		return 0;
 	}
 
@@ -39,6 +40,7 @@ public class MenuPrincipalConsole implements Ihm {
 	 */
 	@Override
 	public double saisirNote(Stagiaire stagiaire) {
+		System.out.println("MenuPrincipalConsole.saisirNote()");
 		return 0.0;
 	}
 
@@ -47,6 +49,7 @@ public class MenuPrincipalConsole implements Ihm {
 	 */
 	@Override
 	public Stagiaire saisirStagiaire() {
+		System.out.println("MenuPrincipalConsole.saisirStagiaire()");
 		return null;
 	}
 
@@ -55,7 +58,10 @@ public class MenuPrincipalConsole implements Ihm {
 	 */
 	@Override
 	public void afficherLesStagiaires(Collection<Stagiaire> c) {
-
+		System.out.println("MenuPrincipalConsole.afficherLesStagiaires()");
+		for (Stagiaire stagiaire : c) {
+			System.out.println(stagiaire.toString());
+		}
 	}
 
 }

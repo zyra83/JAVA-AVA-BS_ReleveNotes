@@ -2,4 +2,4 @@
  * @author VOTRE_NOM
  *
  */
-package relevenote.presenter;
+package relevenotes.presenter;
