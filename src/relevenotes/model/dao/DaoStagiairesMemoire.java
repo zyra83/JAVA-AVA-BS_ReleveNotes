@@ -14,54 +14,28 @@ public class DaoStagiairesMemoire implements Dao<Stagiaire, String> {
 		// TODO Auto-generated constructor stub
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * relevenotes.model.dao.Dao#create(relevenotes.model.entities.Stagiaire)
-	 */
 	@Override
 	public void create(Stagiaire stagiaire) {
+		// tester qu'il n'est pas nul ou n'existe pas déjà
 		this.setStagiaire.add(stagiaire);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * relevenotes.model.dao.Dao#delete(relevenotes.model.entities.Stagiaire)
-	 */
 	@Override
 	public void delete(Stagiaire stagiaire) {
 		setStagiaire.remove(stagiaire);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see relevenotes.model.dao.Dao#readAll()
-	 */
 	@Override
 	public List<Stagiaire> readAll() {
-		return Collections.unmodifiableList(setStagiaire);
+		return new ArrayList<>(setStagiaire);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * relevenotes.model.dao.Dao#exists(relevenotes.model.entities.Stagiaire)
-	 */
 	@Override
 	public boolean exists(Stagiaire stagiaire) {
 		return setStagiaire.contains(stagiaire);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see relevenotes.model.dao.Dao#read(java.lang.String)
-	 */
+
 	@Override
 	public Stagiaire read(String s) {
 		for (Stagiaire stagiaire : setStagiaire) {
@@ -72,17 +46,10 @@ public class DaoStagiairesMemoire implements Dao<Stagiaire, String> {
 		return null;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * relevenotes.model.dao.Dao#update(relevenotes.model.entities.Stagiaire)
-	 */
 	@Override
 	public void update(Stagiaire s) {
-		// TODO à retreavailler c'est surement crade comme méthode ça...
-		Stagiaire old = read(s.getIdentite());
-		setStagiaire.remove(old);
+		int indice = setStagiaire.indexOf(s);
+		setStagiaire.remove(indice);
 		create(s);
 	}
 

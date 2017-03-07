@@ -5,52 +5,31 @@ import java.util.List;
 
 import relevenotes.model.contracts.FacadeMetier;
 import relevenotes.model.dao.Dao;
+import relevenotes.model.dao.DaoFactory;
 import relevenotes.model.entities.Stagiaire;
 import relevenotes.model.entities.comparators.MoyenneComparator;
 
 public class FacadeMetierImpl implements FacadeMetier {
 
-	private Dao<Stagiaire, String> persistanceStagiaires;
+	private Dao<Stagiaire, String> persistanceStagiaires = DaoFactory.fabriquerPersistenceMemoireStagiaires();
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * relevenotes.model.facade.FacadeMetier#ajouterStagiaire(relevenotes.model.
-	 * entities.Stagiaire)
-	 */
 	@Override
 	public void ajouterStagiaire(Stagiaire stagiaire) {
+		System.out.println("FacadeMetierImpl.ajouterStagiaire()");
+
 		persistanceStagiaires.create(stagiaire);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see relevenotes.model.facade.FacadeMetier#ajouterNote(double,
-	 * relevenotes.model.entities.Stagiaire)
-	 */
 	@Override
 	public void ajouterNote(double d, Stagiaire s) {
 		s.ajouterNote(d);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see relevenotes.model.facade.FacadeMetier#listerStagiaires()
-	 */
 	@Override
 	public List<Stagiaire> listerStagiaires() {
-		return Collections.unmodifiableList(persistanceStagiaires.readAll());
+		return persistanceStagiaires.readAll();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * relevenotes.model.facade.FacadeMetier#listerStagiairesOrdreAlphabetique()
-	 */
 	@Override
 	public List<Stagiaire> listerStagiairesOrdreAlphabetique() {
 		List<Stagiaire> l = persistanceStagiaires.readAll();
@@ -58,12 +37,6 @@ public class FacadeMetierImpl implements FacadeMetier {
 		return l;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * relevenotes.model.facade.FacadeMetier#listerStagiairesOrdreDeMerite()
-	 */
 	@Override
 	public List<Stagiaire> listerStagiairesOrdreDeMerite() {
 		List<Stagiaire> l = persistanceStagiaires.readAll();
