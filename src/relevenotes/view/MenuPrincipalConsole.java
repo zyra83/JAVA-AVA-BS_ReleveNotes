@@ -16,6 +16,12 @@ public class MenuPrincipalConsole implements Ihm {
 	@Override
 	public void afficherMenu() {
 		System.out.println("MenuPrincipalConsole.afficherMenu()");
+		for (String string : MENU) {
+			System.out.println(string);
+		}
+		int choix = view.utils.LectureConsole.saisirEntier();
+		view.utils.LectureConsole.afficherMessageAvecSautLigne("Vous avez saisis : " + choix);
+		
 	}
 
 	/* (non-Javadoc)

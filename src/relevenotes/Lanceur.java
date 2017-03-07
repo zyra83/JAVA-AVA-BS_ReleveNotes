@@ -14,6 +14,7 @@ public class Lanceur {
 		Ihm ihm = VueFactory.fabriquerVueConsole();
 		PresenterPrincipal prez = new PresenterPrincipal(fm, ihm);
 		prez.executer();
+		
 		/*
 		Stagiaire s1 = new Stagiaire();
 		s1.setIdentite("riri");

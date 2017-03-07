@@ -1,4 +1,4 @@
-package relevenotes.model.exceptions;
+package relevenotes.model.entities.exceptions;
 
 @SuppressWarnings("serial")
 public class CalculMoyenneImpossibleException extends Exception {

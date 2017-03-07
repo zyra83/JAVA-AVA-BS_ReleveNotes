@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import relevenotes.model.exceptions.CalculMoyenneImpossibleException;
+import relevenotes.model.entities.exceptions.CalculMoyenneImpossibleException;
 
 /**
  * Le stagiaire

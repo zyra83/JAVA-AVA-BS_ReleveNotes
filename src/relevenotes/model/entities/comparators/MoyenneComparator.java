@@ -3,7 +3,7 @@ package relevenotes.model.entities.comparators;
 import java.util.Comparator;
 
 import relevenotes.model.entities.Stagiaire;
-import relevenotes.model.exceptions.CalculMoyenneImpossibleException;
+import relevenotes.model.entities.exceptions.CalculMoyenneImpossibleException;
 
 public class MoyenneComparator implements Comparator<Stagiaire> {
 

@@ -1,4 +1,4 @@
-package relevenotes.model.exceptions;
+package relevenotes.model.entities.exceptions;
 
 public class Messages {
 

@@ -3,7 +3,7 @@ package relevenotes.tests;
 import org.junit.Test;
 
 import relevenotes.model.entities.Stagiaire;
-import relevenotes.model.exceptions.CalculMoyenneImpossibleException;
+import relevenotes.model.entities.exceptions.CalculMoyenneImpossibleException;
 
 public class StagiaireTest {
 
