@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import relevenotes.model.entities.exceptions.CalculMoyenneImpossibleException;
 
 /**
@@ -13,17 +16,20 @@ import relevenotes.model.entities.exceptions.CalculMoyenneImpossibleException;
  *
  */
 public class Stagiaire implements Comparable<Stagiaire> {
-
+	// MEP logger
+	public static final Logger LOG = LogManager.getLogger(Stagiaire.class.getSimpleName());
+	
 	// ATTRIBUTS
 
 	private String identite;
-	/**
+	/**2
 	 * Instancier dans le constructeur sinon ça fait gueuler le CDT Robin
 	 */
 	private List<Double> releveNotes = new ArrayList<>();
 
 	public Stagiaire() {
 		// Cosntructeur vide de bean
+		LOG.info("Instanciation d'un nouveau Stagiaire");
 	}
 
 	// ACCESSEURS
@@ -42,6 +48,7 @@ public class Stagiaire implements Comparable<Stagiaire> {
 	 * @return
 	 */
 	public List<Double> getReleveNotes() {
+		
 		// 1 retourne une copie de la liste
 		// return new ArrayList<>(this.releveNotes);
 		// 2 retourne la liste mais en lecture seule.
@@ -110,6 +117,7 @@ public class Stagiaire implements Comparable<Stagiaire> {
 		builder.append(", releveNotes=");
 		builder.append(releveNotes);
 		builder.append("]");
+		LOG.info("ToString d'un Stagiaire");
 		return builder.toString();
 	}
 
