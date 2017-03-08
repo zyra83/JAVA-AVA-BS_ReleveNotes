@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import relevenotes.model.entities.exceptions.CalculMoyenneImpossibleException;
 
@@ -16,7 +17,7 @@ import relevenotes.model.entities.exceptions.CalculMoyenneImpossibleException;
  */
 public class Stagiaire implements Comparable<Stagiaire> {
 	// MEP logger
-	public static final Logger LOG = Logger.getLogger(Stagiaire.class.getSimpleName());
+	public static final Log LOG = LogFactory.getLog(Stagiaire.class.getSimpleName());
 	
 	// ATTRIBUTS
 
