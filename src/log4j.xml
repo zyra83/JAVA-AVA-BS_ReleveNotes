@@ -12,7 +12,7 @@
 		<layout class="org.apache.log4j.PatternLayout"> 
 			<param name="ConversionPattern" value="[%-5p] Classe : %c Message : %m%n" />
 		</layout>
-	</appender>
+	</appender>	
 	
 	<appender name="fichier" class="org.apache.log4j.FileAppender">
 		<param name="file" value="journal.log"/>
@@ -20,6 +20,13 @@
 			<param name="ConversionPattern" value="%d{dd/MM/yyyy HH:mm:ss} (%-10F:%L) %-5p - %m%n" />
 		</layout>
 	</appender>
+	
+	<appender name="pageHtml" class="org.apache.log4j.FileAppender">
+		<param name="file" value="test.html" />
+		 <layout class="org.apache.log4j.HTMLLayout" >
+            <param name="LocationInfo" value="true" />
+        </layout>
+	</appender>	
 	
 	<!-- Trace les messages uniquement du niveau TRACE -->
 	 <appender name="fichierTrace" class="org.apache.log4j.FileAppender">
@@ -42,8 +49,7 @@
 			<param name="levelMin" value="TRACE" />
 			<param name="levelMax" value="INFO" />
  		</filter>
-	</appender>
-	
+	</appender>	
 	
 	<!-- ======================== -->
 	<!-- LOGGERS DE L'APPLICATION -->
@@ -52,11 +58,11 @@
 	<!--  Placer les loggers particuliers puis root (attention additivite des appenders)-->
 	<logger name="toto" additivity="false" >
 		<level value="trace" />
-		<appender-ref ref="fichierFourchette" />
+		<appender-ref ref="pageHtml" />
 	</logger>
 	<!-- root: pour les classes qui ont comme logger NomClasse.class -->
 	<root>
-		<level value="trace" />
+		<level value="info" />
 		<appender-ref ref="console" />		
 		<appender-ref ref="fichier" />
 	</root>
