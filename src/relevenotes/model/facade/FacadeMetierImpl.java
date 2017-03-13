@@ -8,6 +8,7 @@ import relevenotes.model.dao.Dao;
 import relevenotes.model.dao.DaoFactory;
 import relevenotes.model.entities.Stagiaire;
 import relevenotes.model.entities.comparators.MoyenneComparator;
+import relevenotes.refs.Matiere;
 
 public class FacadeMetierImpl implements FacadeMetier {
 
@@ -21,8 +22,8 @@ public class FacadeMetierImpl implements FacadeMetier {
 	}
 
 	@Override
-	public void ajouterNote(double d, Stagiaire s) {
-		s.ajouterNote(d);
+	public void ajouterNote(Matiere matiere, double d, Stagiaire s) {
+		s.ajouterNote(matiere, d);
 	}
 
 	@Override
