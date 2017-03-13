@@ -16,4 +16,6 @@ public interface FacadeMetier {
 
 	List<Stagiaire> listerStagiairesOrdreDeMerite();
 
+	void initialiserDonneesBidons();
+
 }

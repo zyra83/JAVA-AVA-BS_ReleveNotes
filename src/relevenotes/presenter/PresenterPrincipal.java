@@ -19,7 +19,7 @@ public class PresenterPrincipal {
 	public void executer() {
 		while (true) {
 			laVue.afficherMenu();
-			int choix = laVue.saisir(0, 4);
+			int choix = laVue.saisir(0, 5);
 
 			switch (choix) {
 
@@ -36,6 +36,9 @@ public class PresenterPrincipal {
 				break;
 			case 4:
 				// laVue.saisirNote(stagiaire);
+				break;
+			case 5:
+				leMetier.initialiserDonneesBidons();
 				break;
 			case 0:
 				System.exit(0);

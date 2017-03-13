@@ -62,7 +62,7 @@
 	</logger>
 	<!-- root: pour les classes qui ont comme logger NomClasse.class -->
 	<root>
-		<level value="info" />
+		<level value="OFF" />
 		<appender-ref ref="console" />		
 		<appender-ref ref="fichier" />
 	</root>
