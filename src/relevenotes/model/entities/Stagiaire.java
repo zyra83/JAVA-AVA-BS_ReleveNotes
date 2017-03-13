@@ -159,7 +159,7 @@ public class Stagiaire implements Comparable<Stagiaire> {
 		// other and 0 if they are supposed to be equal
 		// this.calculerMoyenne().compareTo(other.calculerMoyenne()).par;
 
-		return this.identite.compareTo(other.getIdentite());
+		return this.getIdentite().compareTo(other.getIdentite());
 
 	}
 

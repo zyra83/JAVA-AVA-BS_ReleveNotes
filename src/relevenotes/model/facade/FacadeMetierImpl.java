@@ -45,4 +45,26 @@ public class FacadeMetierImpl implements FacadeMetier {
 		return l;
 	}
 
+	@Override
+	public void initialiserDonneesBidons() {
+		Stagiaire riri = new Stagiaire();
+		riri.setIdentite("riri");
+	
+		Stagiaire fifi = new Stagiaire();
+		fifi.setIdentite("fifi");
+	
+		Stagiaire loulou = new Stagiaire();
+		loulou.setIdentite("loulou");
+	
+		riri.ajouterNote(Matiere.JAVA, 20);
+		fifi.ajouterNote(Matiere.JAVA, 15);
+		loulou.ajouterNote(Matiere.JAVA, 10);
+		
+		persistanceStagiaires.create(riri);
+		persistanceStagiaires.create(fifi);
+		persistanceStagiaires.create(loulou);
+	}
+	
+	
+
 }
