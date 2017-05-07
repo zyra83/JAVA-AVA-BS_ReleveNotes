@@ -1,7 +1,6 @@
 package relevenotes.model.dao;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import relevenotes.model.entities.Stagiaire;
